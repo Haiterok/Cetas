@@ -1,0 +1,41 @@
+.custom-hero {
+  height: 90vh;
+  display: flex;
+}
+
+.change-menu {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 9998;
+  width: 50px;
+}
+
+.change-btn {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  z-index: 9999;
+  border: none;
+  border-radius: 50%;
+}
+
+.custom-hero p {
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-hero .w-50 {
+    width: 100% !important;
+  }
+
+  .custom-hero .hero-image {
+    width: 100% !important;
+    height: 100% !important;
+    right: 0% !important;
+  }
+
+  .custom-hero {
+    padding: 0 !important;
+  }
+}
