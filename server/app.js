@@ -24,6 +24,10 @@ const transporter = nodemailer.createTransport({
 app.post("/send-email", async (req, res) => {
   const { receiverEmail, receiverName, receiverPhone } = req.body;
 
+  if (!receiverEmail || !receiverName || !receiverPhone) {
+    return res.status(400).json({ message: "Всі поля є обов'язковими" });
+  }
+
   try {
     //try catch для відправки листа
     await transporter.sendMail({
@@ -66,8 +70,13 @@ app.post("/send-email", async (req, res) => {
 });
 
 app.post("/newsletter", async (req, res) => {
-  console.log(req.body);
+  /* console.log(req.body); */
   const { receiverEmail, receiverName } = req.body;
+
+  if (!receiverEmail || !receiverName) {
+    return res.status(400).json({ message: "Всі поля є обов'язковими" });
+  }
+
   try {
     await transporter.sendMail({
       from: process.env.EMAIL,

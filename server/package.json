@@ -1,14 +1,13 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "main": "app.js",
+  "name": "serverbun",
+  "module": "app.js",
   "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "@types/bun": "latest"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "peerDependencies": {
+    "typescript": "^5"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
